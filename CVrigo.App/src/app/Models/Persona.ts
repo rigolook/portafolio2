@@ -1,9 +1,9 @@
 export class PersonaM{
-    id?: number;
-    Nombre = "";
-    Descripcion = "";
-    Pais = "";
-    NumeroTelefono = "";
-    Email = "";
+    id: string = "";
+    nombre: string = "";
+    descripcion: string = "";
+    pais: string = "";
+    numeroTelefono: number = 0;
+    email: string = "";
     
 }

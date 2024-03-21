@@ -18,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<PersonaServices>();
 //agregar Cors rule
 builder.Services.AddCors(options => options.AddPolicy("AngularClient", policy => {
-    policy.WithOrigins("*")
+    policy.WithOrigins("http://localhost:4200")
     .AllowAnyMethod().AllowAnyHeader();
 }));
 

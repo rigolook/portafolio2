@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'http://portafolioRLG.somee.com/Persona/API'
+    apiUrl: 'http://localhost:5070/api'
 };

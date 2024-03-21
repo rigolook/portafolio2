@@ -7,11 +7,32 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class PersonaService {
-  url="Persona";
+  url="persona";
 
+  private apikey = "TU_API_KEY";
   constructor(private http: HttpClient) { }
+
+
+  getRandomCat():Observable<any>{
+    return this.http.get<any>('https://api.thecatapi.com/v1/images/search',{
+      headers:{
+        'x-api-key':this.apikey
+      }
+    });
+  }
+  
+
+
 
   public getPersonas():Observable<PersonaM[]>{
   return this.http.get<PersonaM[]>(`${environment.apiUrl}/${this.url}`)
   };
+
+
+
+
+
+
+
+
 }

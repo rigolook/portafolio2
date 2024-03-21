@@ -7,12 +7,7 @@ import { PersonaService } from './Services/persona.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'CVrigo.App';
-
-  
-
-
-  
+  title = 'portafolio-RigoLook777';
 }
 
 

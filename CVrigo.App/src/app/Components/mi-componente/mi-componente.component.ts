@@ -1,21 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonaM } from '../../Models/Persona';
 import { PersonaService } from '../../Services/persona.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-mi-componente',
   templateUrl: './mi-componente.component.html',
   styleUrl: './mi-componente.component.css'
 })
-export class MiComponenteComponent {
+export class MiComponenteComponent implements OnInit{
 
+  catImageUrl:string='';
   persona:PersonaM[]=[];
 
   constructor(private personaService: PersonaService){}
+  ngOnInit(): void {
+    this.personaService.getPersonas().subscribe((result: PersonaM[])=>(this.persona=result));
+    this.getRandomCatImage();
+  }
 
-  ngOnInit():void{
-   this.personaService.getPersonas().subscribe((result: PersonaM[]) =>(this.persona=result));
-   console.log(this.persona);
+  getRandomCatImage():void{
+    this.personaService.getRandomCat().subscribe((response: any)=>{
+      this.catImageUrl = response[0].url;
+    });
+  }  
+  obtenerImagenAleatoria(){
+    this.getRandomCatImage();
+  }
+  // ngOnInit():void{
+  //  this.personaService.getPersonas().subscribe((result: PersonaM[]) =>(this.persona=result));
+  //  console.log(this.persona);
+  // }
+  
+  printObjetc():void{
+      console.log(this.persona);
+      prompt(this.persona[0].nombre.toString());
   }
 
   seleccion: string = "";
