@@ -1,6 +1,7 @@
 using CVrigo.api.Configurations;
 using CVrigo.api.Services;
 using CVrigo.api.Models;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,11 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddScoped<PersonaServices>();
-
+//agregar Cors rule
+builder.Services.AddCors(options => options.AddPolicy("AngularClient", policy => {
+    policy.WithOrigins("*")
+    .AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
@@ -30,6 +35,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseCors("AngularClient");
+
 app.MapControllers();
+
+
 
 app.Run();

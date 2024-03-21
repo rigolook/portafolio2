@@ -40,6 +40,8 @@ public class PersonaController : ControllerBase
             ModelState.AddModelError("Número de telefono", "Ingrese un número de telefono");
         if (PersonaToInsert.Email == string.Empty)
             ModelState.AddModelError("Email", "Coloque un correo electronico valido");
+        // if (PersonaToInsert.Ciudad == string.Empty)
+        //     ModelState.AddModelError("Ciudad", "Coloque una ciudad");
 
         await _PersonaServices.InsertPersonaM(PersonaToInsert);
 
@@ -74,7 +76,8 @@ public class PersonaController : ControllerBase
             ModelState.AddModelError("Número de telefono", "Ingrese un número de telefono");
         if (PersonaToUpdate.Email == string.Empty)
             ModelState.AddModelError("Email", "Coloque un correo electronico valido");
-
+        // if (PersonaToUpdate.Ciudad == string.Empty)
+        //     ModelState.AddModelError("Ciudad", "Coloque una ciudad");
         await _PersonaServices.UpdatePersona(PersonaToUpdate);
 
         return Ok();

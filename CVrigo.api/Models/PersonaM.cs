@@ -19,5 +19,7 @@ namespace CVrigo.api.Models
         public Int64 NumeroTelefono {get;set;}
         [BsonElement("Email")]
         public string Email {get;set;} = string.Empty;
+        // [BsonElement("Ciudad")]
+        // public string Ciudad {get;set;} = string.Empty;
     }
 }
