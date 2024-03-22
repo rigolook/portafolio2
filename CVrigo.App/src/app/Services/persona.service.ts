@@ -10,6 +10,7 @@ export class PersonaService {
   url="persona";
 
   private apikey = "TU_API_KEY";
+  
   constructor(private http: HttpClient) { }
 
 
@@ -20,6 +21,7 @@ export class PersonaService {
       }
     });
   }
+  
   
 
 

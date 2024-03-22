@@ -11,6 +11,7 @@ import { response } from 'express';
 export class MiComponenteComponent implements OnInit{
 
   catImageUrl:string='';
+  dogImageUrl:string='';
   persona:PersonaM[]=[];
 
   constructor(private personaService: PersonaService){}
@@ -24,11 +25,11 @@ export class MiComponenteComponent implements OnInit{
       this.catImageUrl = response[0].url;
     });
   }  
-  obtenerImagenAleatoria(): void{
-   console.log("gato");
+  
+  changeCatImage(): void {
+    // Llamar a getRandomCatImage() para obtener una nueva imagen de gato
     this.getRandomCatImage();
-    
-   }
+  }
  
   // ngOnInit():void{
   //  this.personaService.getPersonas().subscribe((result: PersonaM[]) =>(this.persona=result));

@@ -8,6 +8,11 @@
         margin-top: 100px;
         padding: 50px 20px;
 }
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
 
 button::after .hola {
 content: '';
@@ -236,7 +241,10 @@ footer{
   }
   .inicio .fila .col .contenedor-img{
       width: 50%;
+      height: 60%;
       margin-top: 30px;
+      display: block;
+      
   }
 
   .servicios{
@@ -527,7 +535,8 @@ transition: 0.1s;
 .inicio .fila .col .contenedor-img{
   max-width: 240px;
   margin-top: -70px;
-  margin-left: 255px;
+  margin-left: 615px;
+  margin-right: 0px;
 }
 .inicio .fila .col .contenedor-img img{
   width: 110%;
@@ -703,7 +712,7 @@ html {
                       </div>
                       <div class="col">
                           <div class="contenedor-img">
-                              <img src="./assets/perfil.jpg"  alt="no esta perfil">
+                              <img src="./assets/perfil.jpg" width="400" height="400" alt="no esta perfil">
                           </div>
                       </div>
                   </div>
@@ -870,7 +879,7 @@ html {
     
         <nav>
             <a class="borde" id="item" (click)="seleccionDeTrabajos('Todos')" >Todos</a>
-            
+                        
         </nav>
     
         <div class="galeria">
@@ -919,11 +928,12 @@ html {
         <section class="apiGato" id="apiGato">
           <div class="apisgato">
               <h1 class="titlegato">Imagenes aleatorias de gatos...</h1>
-              <img class="titlegato" [src]="catImageUrl" alt="Gato aquí">
-          </div>
+              <img class="titlegato" [src]="catImageUrl" alt="Gato aquí" width="520" height="450">
+              
+            </div>
       </section>
     </section>
-    
+   
       <!-- sección contacto -->
       <section class="contacto" id="contacto" >
           <div class="contenedor-contacto">
