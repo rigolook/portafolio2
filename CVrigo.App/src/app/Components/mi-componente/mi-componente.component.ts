@@ -24,9 +24,12 @@ export class MiComponenteComponent implements OnInit{
       this.catImageUrl = response[0].url;
     });
   }  
-  obtenerImagenAleatoria(){
+  obtenerImagenAleatoria(): void{
+   console.log("gato");
     this.getRandomCatImage();
-  }
+    
+   }
+ 
   // ngOnInit():void{
   //  this.personaService.getPersonas().subscribe((result: PersonaM[]) =>(this.persona=result));
   //  console.log(this.persona);
@@ -45,6 +48,7 @@ export class MiComponenteComponent implements OnInit{
       case "Todos":{
         var cambioDeBorde = document.getElementById("item")
         cambioDeBorde?.classList.add("borde");
+        console.log("hola ")
         break;
       }
       case "Diseño":{
@@ -66,6 +70,7 @@ export class MiComponenteComponent implements OnInit{
         console.log("hola Mundo")
         break;
       }
+      
     }
   }
 }

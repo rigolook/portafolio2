@@ -15,11 +15,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddScoped<PersonaServices>();
+builder.Services.AddSingleton<PersonaServices>();
 //agregar Cors rule
-builder.Services.AddCors(options => options.AddPolicy("AngularClient", policy => {
-    policy.WithOrigins("http://localhost:4200")
-    .AllowAnyMethod().AllowAnyHeader();
+builder.Services.AddCors(options => 
+    options.AddPolicy("AnyClient", policy =>
+    {
+        policy.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
 }));
 
 var app = builder.Build();
@@ -35,7 +38,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseCors("AngularClient");
+app.UseCors("AnyClient");
 
 app.MapControllers();
 

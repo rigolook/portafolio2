@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/cvrigo.app",
+    "public": "dist/cvrigo.app/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
